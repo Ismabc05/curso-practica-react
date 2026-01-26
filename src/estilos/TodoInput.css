@@ -1,0 +1,16 @@
+input {
+  width: 200px;
+  padding: 10px 12px;
+  border: 2px solid black;
+  text-align: center;   /* borde normal */
+  border-radius: 6px;
+  outline: none;             /* quita el borde azul por defecto */
+  transition: border 0.2s;   /* transición suave */
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+input:focus {
+  border-color: rgb(0, 191, 255);    /* cambia color al hacer click */
+}
