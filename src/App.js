@@ -4,14 +4,20 @@ import { TodoInput } from './componentes/TodoInput.js';
 import { TodoList } from './componentes/TodoList.js';
 import { TodoItem } from './componentes/TodoItem.js';
 import { TodoButton } from './componentes/TodoButton.js';
+import { TodoLoading } from './componentes/TodoLoading.js';
+import { TodoError } from './componentes/TodoError.js';
+import { TodoEmpty } from './componentes/TodoEmpty.js';
 import { useLocalStorage } from "./hooks/useLocalStorage";
 
 
 //const defaultTodos = [
-  //{ text: "Cortar cebolla", completed: true},
-  //{ text: "Completar el curso de React", completed: false},
-  //{ text: "LLorar con la llorona", completed: false},
-  //{ text: "LALALALALALALA", completed: false},
+  //{ text: "Desayunar", completed: false},
+  //{ text: "Limpiar mi habitacion", completed: false},
+  //{ text: "Hacer los deberes", completed: false},
+  //{ text: "Ir a clase de inglés", completed: false},
+  //{ text: "Ir ak gimnasio", completed: false},
+  //{ text: "Ducharme", completed: false},
+  //{ text: "Hacer la cama", completed: false},
 //];
 
 //localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
@@ -52,12 +58,12 @@ function App() {
 
       <TodoInput valorInput={valorInput} setValorInput={setValorInput}/>
 
-      {todos.every(todo => todo.completed) && <p>🎉 ¡Has completado todas las tareas!</p>} 
+      {todos.length > 0 && todos.every(todo => todo.completed) && <p style={{width: '100%', textAlign: 'center',}}>¡Has completado todas las tareas!</p>} 
 
       <TodoList>
-        {loading && <p>Cargando...</p>}
-        {error && <p>Hubo un error</p>}
-        {(!loading && buscarTodos.length === 0) && <p>No tienes ninguna tarea!</p>}
+        {loading && <TodoLoading/>}
+        {error && <TodoError/>}
+        {(!loading && buscarTodos.length === 0) && <TodoEmpty/>}
 
         {buscarTodos.map(todo => ( 
           <TodoItem key={todo.text} text={todo.text} completed={todo.completed}  
