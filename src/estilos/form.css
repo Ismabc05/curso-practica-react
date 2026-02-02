@@ -1,0 +1,81 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 28px;
+  border-radius: 12px;
+
+  min-width: 320px;
+  max-width: 400px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.textarea {
+  resize: none;
+  min-height: 80px;
+
+  padding: 10px 12px;
+  font-size: 15px;
+
+  border-radius: 6px;
+  border: 1px solid #ccc;
+
+  outline: none;
+
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.textarea:focus {
+  border-color: #0aa6ef;
+  box-shadow: 0 0 0 2px rgba(10, 166, 239, 0.2);
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 8px;
+}
+
+.btn-cancelar,
+.btn-confirmar {
+  padding: 8px 16px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  border-radius: 6px;
+  border: none;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancelar:hover {
+  background: #cfcfcf;
+}
+
+/* Botón confirmar */
+.btn-confirmar {
+  background: #0aa6ef;
+  color: white;
+}
+
+.btn-confirmar:hover {
+  background: #0892d1;
+}

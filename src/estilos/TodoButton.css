@@ -1,4 +1,4 @@
-button {
+.btn-agregar {
   background-color: rgb(0, 191, 255);  /* azul clarito */
   color: white;                        /* símbolo + blanco */
   border: none;
@@ -13,7 +13,7 @@ button {
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
 }
 
-button:hover {
+.btn-agregar:hover {
   transform: scale(1.1);
   
   /* resplandor más intenso al pasar el mouse */
