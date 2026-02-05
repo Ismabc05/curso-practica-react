@@ -8,11 +8,7 @@ function Form () {
 
     const [sendTodo, setSendTodo] = React.useState("");
 
-    const ccerrarModal = () => {
-        setOpenModal(!openModal)
-    }
-
-    const ecerrarModal = () => {
+    const cerrarModal = () => {
         setOpenModal(!openModal)
     }
 
@@ -29,13 +25,13 @@ function Form () {
 
                 <button className="btn-cancelar" onClick={(event) => {
                     event.preventDefault();
-                    ccerrarModal();
+                    cerrarModal();
                 }}>Cancelar</button>
 
                 <button className="btn-confirmar" onClick={(event) => {
                     event.preventDefault();
                     addTodo(sendTodo)
-                    ecerrarModal();
+                    cerrarModal();
                 }}>Confirmar</button>
 
             </div>
