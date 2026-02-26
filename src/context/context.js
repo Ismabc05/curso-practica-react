@@ -50,13 +50,24 @@ function TodoProvider ({children}) {
     saveTodos(newTodos);
     }
 
-    const editTodo = () => {
-        navigate("/edit")
+    const editTodo = (id) => {
+        navigate(`/edit/${id}`);
     }
+
+    const actualizarTodo = (id, newText) => {
+        const newTodos = [...todos];
+        const todoIndex = newTodos.findIndex(
+        (todo) => todo.id === id
+         );
+        newTodos[todoIndex].text = newText;
+        saveTodos(newTodos);
+    };
+
+    
 
    return(
     <TodoContext.Provider value={{
-        deleteTodo, completeTodo, totalTodos, buscarTodos, completedTodos, setValorInput, loading, error, valorInput, todos, openModal, setOpenModal, addTodo, editTodo
+        deleteTodo, completeTodo, totalTodos, buscarTodos, completedTodos, setValorInput, loading, error, valorInput, todos, openModal, setOpenModal, addTodo, editTodo, actualizarTodo
     }}>
         {children}
     </TodoContext.Provider>

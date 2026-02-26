@@ -15,7 +15,7 @@ const rutas = createBrowserRouter([
     ),
   },
   {
-    path: "/edit",
+    path: "/edit/:id",
     element: (
       <TodoProvider>
         <Edit />

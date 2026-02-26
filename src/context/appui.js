@@ -42,7 +42,7 @@ function AppUI() {
             completed={todo.completed}
             onComplete={() => completeTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
-            onEdit={() => editTodo()}
+            onEdit={() => editTodo(todo.id)}
           />
         ))}
       </TodoList>
