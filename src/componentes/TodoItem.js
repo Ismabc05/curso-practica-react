@@ -14,6 +14,9 @@ function TodoItem( props ) {
         {props.text}
       </p>
 
+      <span className="Icon-delete" onClick={props.onEdit}>
+        <MdDelete />
+      </span>
       <span className="Icon-delete" onClick={props.onDelete}>
         <MdDelete />
       </span>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -10,6 +11,7 @@ function TodoProvider ({children}) {
     const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage("TODOS_V1", [])
     const [valorInput, setValorInput] = React.useState("");
     const [openModal, setOpenModal] = React.useState(false);
+    const navigate = useNavigate()
 
 
     const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -46,9 +48,13 @@ function TodoProvider ({children}) {
     saveTodos(newTodos);
     }
 
+    const editTodo = () => {
+        navigate("/edit")
+    }
+
    return(
     <TodoContext.Provider value={{
-        deleteTodo, completeTodo, totalTodos, buscarTodos, completedTodos, setValorInput, loading, error, valorInput, todos, openModal, setOpenModal, addTodo
+        deleteTodo, completeTodo, totalTodos, buscarTodos, completedTodos, setValorInput, loading, error, valorInput, todos, openModal, setOpenModal, addTodo, editTodo
     }}>
         {children}
     </TodoContext.Provider>
