@@ -58,3 +58,14 @@
 .Icon-delete {
   color: red;
 }
+
+.Icon-edit {
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.2s;
+  color: rgb(0, 153, 255);
+}
+
+.Icon-edit:hover {
+  transform: scale(1.3);
+}

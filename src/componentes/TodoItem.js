@@ -1,6 +1,7 @@
 import "../estilos/TodoItem.css";
 import { FaCheck } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 
 function TodoItem( props ) {
   return (
@@ -14,8 +15,8 @@ function TodoItem( props ) {
         {props.text}
       </p>
 
-      <span className="Icon-delete" onClick={props.onEdit}>
-        <MdDelete />
+      <span className="Icon-edit" onClick={props.onEdit}>
+        <MdEdit />
       </span>
       <span className="Icon-delete" onClick={props.onDelete}>
         <MdDelete />

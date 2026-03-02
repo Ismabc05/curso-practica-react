@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { TodoContext } from "../context/context";
+import "../estilos/TodoEdit.css"
 
 function Edit() {
   const { id } = useParams();
@@ -27,9 +28,11 @@ function Edit() {
       <h1>Editar</h1>
       <form onSubmit={guardar}>
         <input value={text} onChange={(e) => setText(e.target.value)} />
-        <button type="submit">Guardar</button>
+        <div className="cont-botones">
+          <button className="btn-guardar" type="submit">Guardar</button>
+          <button className="btn-atras" onClick={atras}>Atrás</button>
+        </div>
       </form>
-      <button onClick={atras}>Atrás</button>
     </>
   );
 }

@@ -1,0 +1,36 @@
+.btn-atras{
+  background: #f3f3f3;
+  color: #333;
+  border-color: #d0d0d0;
+}
+.btn-atras:hover{
+  background: #e4e4e4;
+}
+
+/* Confirmar = acción principal */
+.btn-guardar{
+  background: rgb(10, 166, 239);       /* azul */
+  color: #fff;
+}
+.btn-guardar:hover{
+  background: rgb(9, 146, 209);
+}
+
+
+.cont-botones{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+/* Estilo base para ambos botones */
+.cont-botones button{
+  min-width: 50px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-size: 16px;
+}
